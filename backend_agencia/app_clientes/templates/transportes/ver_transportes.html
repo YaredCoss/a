@@ -1,0 +1,35 @@
+{% extends 'base.html' %}
+{% block title %}Ver Transportes{% endblock %}
+{% block content %}
+<h2>Lista de Transportes</h2>
+<a href="{% url 'agregar_transportes' %}" class="btn btn-success mb-3">Agregar transporte</a>
+<table class="table table-hover table-striped">
+  <thead>
+    <tr>
+      <th>Nombre</th>
+      <th>Tipo</th>
+      <th>Capacidad</th>
+      <th>Precio</th>
+      <th>Empresa</th>
+      <th>Acciones</th>
+    </tr>
+  </thead>
+  <tbody>
+    {% for t in transportes %}
+    <tr>
+      <td>{{ t.nombre_transporte }}</td>
+      <td>{{ t.tipo }}</td>
+      <td>{{ t.capacidad }}</td>
+      <td>{{ t.precio }}</td>
+      <td>{{ t.empresa }}</td>
+      <td>
+        <a class="btn btn-sm btn-info" href="{% url 'actualizar_transportes' t.id %}">Editar</a>
+        <a class="btn btn-sm btn-danger" href="{% url 'borrar_transportes' t.id %}">Borrar</a>
+      </td>
+    </tr>
+    {% empty %}
+    <tr><td colspan="6">No hay transportes registrados.</td></tr>
+    {% endfor %}
+  </tbody>
+</table>
+{% endblock %}

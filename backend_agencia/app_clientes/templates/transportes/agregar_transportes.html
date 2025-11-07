@@ -1,0 +1,38 @@
+{% extends 'base.html' %}
+{% block title %}Agregar Transporte{% endblock %}
+{% block content %}
+<h2>Agregar Transporte</h2>
+<form method="post">
+  {% csrf_token %}
+  <div class="mb-3">
+    <label class="form-label">Nombre del transporte</label>
+    <input type="text" name="nombre_transporte" class="form-control" required>
+  </div>
+  <div class="mb-3">
+    <label class="form-label">Descripción</label>
+    <textarea name="descripcion" class="form-control"></textarea>
+  </div>
+  <div class="mb-3">
+    <label class="form-label">Tipo</label>
+    <input type="text" name="tipo" class="form-control">
+  </div>
+  <div class="mb-3">
+    <label class="form-label">Capacidad</label>
+    <input type="number" name="capacidad" class="form-control">
+  </div>
+  <div class="mb-3">
+    <label class="form-label">Precio</label>
+    <input type="text" name="precio" class="form-control">
+  </div>
+  <div class="mb-3">
+    <label class="form-label">Horario</label>
+    <input type="time" name="horario" class="form-control">
+  </div>
+  <div class="mb-3">
+    <label class="form-label">Empresa</label>
+    <input type="text" name="empresa" class="form-control">
+  </div>
+  <button class="btn btn-primary">Guardar</button>
+  <a href="{% url 'ver_transportes' %}" class="btn btn-secondary">Cancelar</a>
+</form>
+{% endblock %}

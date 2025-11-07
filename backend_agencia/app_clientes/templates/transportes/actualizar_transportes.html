@@ -1,0 +1,38 @@
+{% extends 'base.html' %}
+{% block title %}Actualizar Transporte{% endblock %}
+{% block content %}
+<h2>Editar Transporte</h2>
+<form method="post" action="{% url 'realizar_actualizacion_transportes' transporte.id %}">
+  {% csrf_token %}
+  <div class="mb-3">
+    <label class="form-label">Nombre del transporte</label>
+    <input type="text" name="nombre_transporte" value="{{ transporte.nombre_transporte }}" class="form-control" required>
+  </div>
+  <div class="mb-3">
+    <label class="form-label">Descripción</label>
+    <textarea name="descripcion" class="form-control">{{ transporte.descripcion }}</textarea>
+  </div>
+  <div class="mb-3">
+    <label class="form-label">Tipo</label>
+    <input type="text" name="tipo" value="{{ transporte.tipo }}" class="form-control">
+  </div>
+  <div class="mb-3">
+    <label class="form-label">Capacidad</label>
+    <input type="number" name="capacidad" value="{{ transporte.capacidad }}" class="form-control">
+  </div>
+  <div class="mb-3">
+    <label class="form-label">Precio</label>
+    <input type="text" name="precio" value="{{ transporte.precio }}" class="form-control">
+  </div>
+  <div class="mb-3">
+    <label class="form-label">Horario</label>
+    <input type="time" name="horario" value="{{ transporte.horario }}" class="form-control">
+  </div>
+  <div class="mb-3">
+    <label class="form-label">Empresa</label>
+    <input type="text" name="empresa" value="{{ transporte.empresa }}" class="form-control">
+  </div>
+  <button class="btn btn-primary">Actualizar</button>
+  <a href="{% url 'ver_transportes' %}" class="btn btn-secondary">Cancelar</a>
+</form>
+{% endblock %}

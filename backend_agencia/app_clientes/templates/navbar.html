@@ -1,0 +1,46 @@
+<nav class="navbar navbar-expand-lg navbar-light bg-white shadow-sm">
+    <div class="container">
+        <a class="navbar-brand" href="{% url 'inicio_agencia' %}">✈️ Sistema de Administración Agencia</a>
+        <button class="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#navMenu">
+        <span class="navbar-toggler-icon"></span>
+        </button>
+        <div class="collapse navbar-collapse" id="navMenu">
+            <ul class="navbar-nav ms-auto">
+                <li class="nav-item"><a class="nav-link" href="{% url 'inicio_agencia' %}">Inicio</a></li>
+                <li class="nav-item dropdown">
+            <a class="nav-link dropdown-toggle" href="#" id="clientesDrop" role="button" data-bs-toggle="dropdown">
+                <i class="bi bi-people-fill"></i> Clientes
+            </a>
+            <ul class="dropdown-menu" aria-labelledby="clientesDrop">
+              <li><a class="dropdown-item" href="{% url 'agregar_clientes' %}">Agregar clientes</a></li>
+              <li><a class="dropdown-item" href="{% url 'ver_clientes' %}">Ver clientes</a></li>
+            </ul>
+          </li>
+  
+          <li class="nav-item dropdown">
+            <a class="nav-link dropdown-toggle" href="#" id="viajesDrop" role="button" data-bs-toggle="dropdown">
+              <i class="bi bi-globe2"></i> Viajes
+            </a>
+            <ul class="dropdown-menu" aria-labelledby="viajesDrop">
+              <li><a class="dropdown-item" href="#">Agregar viajes</a></li>
+              <li><a class="dropdown-item" href="#">Ver viajes</a></li>
+            </ul>
+          </li>
+  
+          <li class="nav-item dropdown">
+            <a class="nav-link dropdown-toggle" href="#" id="transpDrop" role="button" data-bs-toggle="dropdown">
+              <i class="bi bi-truck"></i> Transporte
+            </a>
+            <ul class="dropdown-menu" aria-labelledby="transpDrop">
+              <li><a class="dropdown-item" href="{% url 'agregar_transportes' %}">Agregar transportes</a></li>
+              <li><a class="dropdown-item" href="{% url 'ver_transportes' %}">Ver transportes</a></li>
+            </ul>
+          </li>
+        </ul>
+      </div>
+    </div>
+  </nav>
+  
+  <!-- Bootstrap Icons CDN (opcional para iconos) -->
+  <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/bootstrap-icons@1.10.5/font/bootstrap-icons.css">
+  
